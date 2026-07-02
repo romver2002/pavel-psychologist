@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F7F3EE" />
+  <rect x="0" y="0" width="14" height="630" fill="#7C9A82" />
+  <g fill="#7C9A82" opacity="0.12">
+    <circle cx="1010" cy="150" r="220" />
+  </g>
+  <text x="80" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="34" fill="#7C9A82" letter-spacing="3">ПСИХОЛОГ-КОНСУЛЬТАНТ · КПТ</text>
+  <text x="78" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="84" font-weight="600" fill="#2C322E">Павел</text>
+  <text x="80" y="380" font-family="Arial, sans-serif" font-size="34" fill="#5E665F">Бережная и доказательная работа</text>
+  <text x="80" y="428" font-family="Arial, sans-serif" font-size="34" fill="#5E665F">с тревогой, выгоранием и стрессом</text>
+  <text x="80" y="540" font-family="Arial, sans-serif" font-size="28" fill="#7C9A82">Онлайн-консультации · из любого города</text>
+</svg>
