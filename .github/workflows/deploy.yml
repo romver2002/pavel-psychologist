@@ -24,16 +24,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # enablement: true — включает GitHub Pages автоматически, без ручного тумблера
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
 
-      - name: Upload static site
+      # Собираем артефакт из корня, исключая служебные папки репозитория
+      - name: Stage site
+        run: |
+          mkdir -p _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
 
       - name: Deploy
         id: deployment
