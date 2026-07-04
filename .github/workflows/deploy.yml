@@ -24,21 +24,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Сайт живёт в подпапке /pavel-psychologist/ на GitHub Pages,
+      # поэтому сборка идёт с basePath (логика — в next.config.mjs).
+      # Для переезда на свой домен достаточно убрать env-переменную.
+      - name: Build static site
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /pavel-psychologist
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
 
-      # Собираем артефакт из корня, исключая служебные папки репозитория
-      - name: Stage site
-        run: |
-          mkdir -p _site
-          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' ./ _site/
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: out
 
       - name: Deploy
         id: deployment

@@ -1,0 +1,44 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# локальные инструменты (Claude / ruflo) — не для репозитория
+/.claude/
+/.claude-flow/
+/.mcp.json
+
+# приватные документы — не публиковать
+/документы/
+/*.pdf
+
+# случайные пустые файлы (обрывки команд в терминале) — можно смело удалить
+/,
+/в
+/╨▓
+/HTTP
+/seen.get(u)
