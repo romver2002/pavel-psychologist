@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 import Placeholder from "./Placeholder";
 import { hero, siteConfig } from "@/lib/content";
+import { assetPath } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -33,7 +34,7 @@ export default function Hero() {
           {siteConfig.photo ? (
             <figure className="hero__photo">
               <Image
-                src={siteConfig.photo}
+                src={assetPath(siteConfig.photo)}
                 alt={`Портрет: ${siteConfig.fullName}`}
                 fill
                 priority
