@@ -34,7 +34,7 @@ export const siteConfig = {
   /** Телефон в международном формате */
   phone: "+7 (931) 216-27-28",
   /** Путь к фото (для микроразметки и OG). Появится после загрузки фото в /public. */
-  photo: "",
+  photo: "/images/pavel-zverev-portrait.jpg",
 
   /** Telegram: укажите "https://t.me/username". Пока не задан — кнопка скрыта. */
   telegram: "",

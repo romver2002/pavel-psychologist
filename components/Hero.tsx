@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import Placeholder from "./Placeholder";
-import { hero } from "@/lib/content";
+import { hero, siteConfig } from "@/lib/content";
 
 export default function Hero() {
   return (
@@ -29,11 +30,24 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={120}>
-          <Placeholder
-            className="hero__photo"
-            label="Здесь будет ваше фото"
-            dim="портрет · 4:5"
-          />
+          {siteConfig.photo ? (
+            <figure className="hero__photo">
+              <Image
+                src={siteConfig.photo}
+                alt={`Портрет: ${siteConfig.fullName}`}
+                fill
+                priority
+                sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 960px) 420px, 44vw"
+                className="hero__photo-img"
+              />
+            </figure>
+          ) : (
+            <Placeholder
+              className="hero__photo"
+              label="Здесь будет ваше фото"
+              dim="портрет · 4:5"
+            />
+          )}
         </Reveal>
       </div>
     </section>
