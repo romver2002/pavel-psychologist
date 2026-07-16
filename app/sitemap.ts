@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    {
+      url: `${base}/oferta/`,
+      lastModified: newest,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({

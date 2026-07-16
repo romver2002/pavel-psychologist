@@ -5,6 +5,14 @@ export function isSet(v: string): boolean {
   return !!v && !v.includes("{{");
 }
 
+/**
+ * Строчная только первая буква (для подстановки в середину предложения,
+ * напр. «…является самозанятым…», сохраняя аббревиатуры вроде «НПД»).
+ */
+export function lowerFirst(s: string): string {
+  return s ? s.charAt(0).toLowerCase() + s.slice(1) : s;
+}
+
 /** href для ссылки «позвонить»: убирает всё, кроме цифр и «+». */
 export function telHref(phone: string): string {
   return "tel:" + phone.replace(/[^\d+]/g, "");
